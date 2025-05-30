@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jobringer Clone</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f0f2f5;
+    }
+
+    header {
+      background-color: #003366;
+      padding: 15px;
+      color: white;
+      text-align: center;
+    }
+
+    .top-nav {
+      background-color: #0055aa;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 10px 0;
+      font-weight: bold;
+    }
+
+    .top-nav a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .search-bar {
+      background-color: white;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .search-bar input,
+    .search-bar select {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      min-width: 200px;
+    }
+
+    nav {
+      background-color: #e6e6e6;
+      padding: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    nav span {
+      background-color: white;
+      padding: 5px 10px;
+      border-radius: 5px;
+      box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+    }
+
+    .stats-section {
+      background-color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .stats {
+      display: flex;
+      justify-content: space-around;
+      margin: 20px 0;
+      flex-wrap: wrap;
+    }
+
+    .stats div {
+      background-color: #d9edf7;
+      padding: 15px;
+      border-radius: 10px;
+      width: 200px;
+    }
+
+    .job-card {
+      background-color: white;
+      margin: 20px auto;
+      padding: 15px;
+      width: 80%;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .footer {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .footer-columns {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+
+    .footer-column {
+      flex: 1 1 300px;
+      margin: 10px;
+    }
+
+    .footer-column h4 {
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Jobringer</h1>
+    <p>India Job Portal</p>
+  </header>
+
+  <div class="top-nav">
+    <a href="#">Dashboard</a>
+    <a href="#">Jobs</a>
+    <a href="#">Jobseeker</a>
+    <a href="#">Ringer</a>
+    <a href="#">Job Subscription</a>
+  </div>
+
+  <div class="search-bar">
+    <input type="text" id="keyword" placeholder="Keyword (e.g., Developer)">
+    <input type="text" id="location" placeholder="Location (e.g., Delhi)">
+    <input type="number" id="salary" placeholder="Min Salary ₹">
+    <select id="experience">
+      <option value="">Experience</option>
+      <option value="Fresher">Fresher</option>
+      <option value="0-1">0-1 Year</option>
+      <option value="1-3">1-3 Years</option>
+      <option value="3-5">3-5 Years</option>
+      <option value="5+">5+ Years</option>
+    </select>
+  </div>
+
+  <nav>
+    <span>#Mumbai</span><span>#Delhi</span><span>#Ajmer</span><span>#Pune</span>
+    <span>#Hyderabad</span><span>#Agra</span><span>#Chennai</span><span>#Indore</span>
+    <span>#USA</span><span>#UK</span><span>#Australia</span><span>#Singapore</span>
+  </nav>
+
+  <div class="stats-section">
+    <h2>Job Statistics</h2>
+    <div class="stats">
+      <div>
+        <h3>Jobs Posted</h3>
+        <p>41,052</p>
+      </div>
+      <div>
+        <h3>Jobs Filled</h3>
+        <p>15,153</p>
+      </div>
+      <div>
+        <h3>Employers</h3>
+        <p>25,782</p>
+      </div>
+      <div>
+        <h3>Active Users</h3>
+        <p>1,561,405</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sample Job Cards -->
+  <div class="job-card" data-title="Deputy Operation Consultant" data-company="StratEx Consulting" data-experience="4" data-type="Full-time"
+    data-skills="SOPs Process Manufacturing Operations" data-location="Surat" data-salary="600000">
+    <h3>Deputy Operation Consultant</h3>
+    <p><strong>Company:</strong> StratEx Consulting</p>
+    <p><strong>Location:</strong> Surat</p>
+    <p><strong>Experience:</strong> 4 - 5 Years</p>
+    <p><strong>Type:</strong> Full-time</p>
+    <p><strong>Skills:</strong> SOPs, Process, Manufacturing, Operations</p>
+  </div>
+
+  <div class="job-card" data-title="Purchasing Executive" data-company="Genus Electrotech Ltd" data-experience="2" data-type="Part-time"
+    data-skills="Supply Chain ERP Negotiation" data-location="Bhuj" data-salary="400000">
+    <h3>Purchasing Executive</h3>
+    <p><strong>Company:</strong> Genus Electrotech Ltd</p>
+    <p><strong>Location:</strong> Bhuj</p>
+    <p><strong>Experience:</strong> 2 - 6 Years</p>
+    <p><strong>Type:</strong> Part-time</p>
+    <p><strong>Skills:</strong> Supply Chain, ERP, Negotiation</p>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="footer-columns">
+      <div class="footer-column">
+        <h4>Jobs in India</h4>
+        <p>Mumbai, Delhi, Hyderabad, Chennai, Pune, Indore</p>
+      </div>
+      <div class="footer-column">
+        <h4>International Jobs</h4>
+        <p>USA, UK, Canada, Australia, Singapore, Dubai</p>
+      </div>
+    </div>
+    <p>&copy; 2025 Jobringer | Recognized by #startupindia</p>
+  </div>
+
+  <script>
+    const keywordInput = document.getElementById('keyword');
+    const locationInput = document.getElementById('location');
+    const salaryInput = document.getElementById('salary');
+    const experienceInput = document.getElementById('experience');
+    const jobCards = document.querySelectorAll('.job-card');
+
+    function filterJobs() {
+      const keyword = keywordInput.value.toLowerCase();
+      const location = locationInput.value.toLowerCase();
+      const salary = parseInt(salaryInput.value) || 0;
+      const experience = experienceInput.value;
+
+      jobCards.forEach(card => {
+        const title = card.dataset.title.toLowerCase();
+        const company = card.dataset.company.toLowerCase();
+        const skills = card.dataset.skills.toLowerCase();
+        const loc = card.dataset.location.toLowerCase();
+        const jobSalary = parseInt(card.dataset.salary);
+        const exp = parseInt(card.dataset.experience);
+
+        const keywordMatch = !keyword || title.includes(keyword) || company.includes(keyword) || skills.includes(keyword);
+        const locationMatch = !location || loc.includes(location);
+        const salaryMatch = isNaN(salary) || jobSalary >= salary;
+        const experienceMatch = !experience ||
+          (experience === "Fresher" && exp === 0) ||
+          (experience === "0-1" && exp <= 1) ||
+          (experience === "1-3" && exp >= 1 && exp <= 3) ||
+          (experience === "3-5" && exp >= 3 && exp <= 5) ||
+          (experience === "5+" && exp > 5);
+
+        if (keywordMatch && locationMatch && salaryMatch && experienceMatch) {
+          card.classList.remove("hidden");
+        } else {
+          card.classList.add("hidden");
+        }
+      });
+    }
+
+    keywordInput.addEventListener("input", filterJobs);
+    locationInput.addEventListener("input", filterJobs);
+    salaryInput.addEventListener("input", filterJobs);
+    experienceInput.addEventListener("change", filterJobs);
+  </script>
+</body>
+</html>
